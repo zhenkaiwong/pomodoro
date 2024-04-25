@@ -233,7 +233,6 @@ const Clock = (props: ClockProps) => {
       } transition-colors duration-500 text-white w-screen h-screen flex flex-col justify-center items-center text-center`}
     >
       <section>
-        {/* display section */}
         <div className="mb-5 underline text-8xl">
           <p>{clockState.mode.toUpperCase()}</p>
         </div>
@@ -242,7 +241,6 @@ const Clock = (props: ClockProps) => {
         </div>
       </section>
       <section className="mt-5">
-        {/* control panel section */}
         <ControlPanel {...controlPanelProps} />
       </section>
     </main>
