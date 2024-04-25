@@ -16,7 +16,7 @@ const config: Config = {
         buttonShadow: "#eb",
       },
       boxShadow: {
-        button: "rgb(235, 235, 235) 0px 12px 0px;",
+        button: "rgb(235, 235, 235) 0px 12px 0px",
       },
     },
   },
