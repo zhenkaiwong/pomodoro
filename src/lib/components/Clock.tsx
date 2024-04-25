@@ -66,16 +66,23 @@ const Clock = (props: ClockProps) => {
   });
 
   useEffect(() => {
+    const focus = new Audio("/audios/background-music-focus.mp3");
+    const rest = new Audio("/audios/background-music-rest.mp3");
+    const click = new Audio("/audios/button-click.mp3");
+
+    focus.loop = true;
+    rest.loop = true;
+
     setClockState((previousClockState) => ({
       ...previousClockState,
       audio: {
         background: {
-          focus: new Audio("/audios/background-music-focus.mp3"),
-          rest: new Audio("/audios/background-music-rest.mp3"),
+          focus,
+          rest,
         },
         effect: {
           button: {
-            click: new Audio("/audios/button-click.mp3"),
+            click,
           },
         },
       },
