@@ -22,18 +22,21 @@ type ClockState = {
   };
 };
 
-const WORKING_DURATION_MIN = 0.25;
-const REST_DURATION_MIN = 0.25;
+type ClockProps = {
+  focusDuration: number;
+  restDuration: number;
+};
 
 const jerseyFont = Jersey_10({ weight: "400", subsets: ["latin"] });
 
-const Clock = () => {
+const Clock = (props: ClockProps) => {
   const { FOCUS_MODE, REST_MODE } = ClockMode;
+  const { focusDuration, restDuration } = props;
   const getNewFocusDuration = () => {
-    return WORKING_DURATION_MIN * 60;
+    return focusDuration * 60;
   };
   const getNewRestDuration = () => {
-    return REST_DURATION_MIN * 60;
+    return restDuration * 60;
   };
   const getDurationString = (duration: number): string => {
     const min = Math.floor(duration / 60);
